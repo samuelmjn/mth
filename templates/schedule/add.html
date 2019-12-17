@@ -1,0 +1,136 @@
+{% extends './_includes/scaffholding.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css">
+<article class="panel is-primary">
+    <p class="panel-heading">
+        Add Schedule
+    </p>
+
+    <div class="panel-block">
+        <div class="container">
+            <div class="content" style="padding:10px;">
+                <form action="" method="POST">
+                    <div class="control">
+                        <label class="label">Branch</label>
+                        <select style="width: 100%;" name="branch" id="branch">
+                            {% for b in branches %}
+                            <option value="{{b.id}}">{{b.name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="control">
+                        <label class="label">Date & Time</label>
+                        <input type="datetime-local" class="input" name="datetime" id="datetime">
+                    </div>
+
+                    <hr>
+
+                    <div class="control">
+                        <label class="label">Worship Leader</label>
+                        <select style="width: 100%;" name="worship_leader" id="worship_leader" style="width: 100%;">
+                            {% for u in users %}
+                            <option value="{{u.id}}">{{u.name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="control">
+                        <label class="label">Singer(s)</label>
+                        <select style="width: 100%;" name="singers" id="singers">
+                            {% for u in users %}
+                            <option value="{{u.id}}">{{u.name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="columns" style="padding-top:2%;">
+                        <div class="column">
+                            <div class="control">
+                                <label class="label">Keyboard</label>
+                                <select style="width: 100%;" name="keyboard" id="keyboard">
+                                    {% for u in users %}
+                                    <option value="{{u.id}}">{{u.name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="control">
+                                <label class="label">Bass</label>
+                                <select style="width: 100%;" name="bass" id="bass">
+                                    {% for u in users %}
+                                    <option value="{{u.id}}">{{u.name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="control">
+                                <label class="label">Drum</label>
+                                <select style="width: 100%;" name="drum" id="drum">
+                                    {% for u in users %}
+                                    <option value="{{u.id}}">{{u.name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="column">
+                            <div class="control">
+                                <label class="label">E.Guitar</label>
+                                <select style="width: 100%;" name="e_guitar" id="e_guitar">
+                                    {% for u in users %}
+                                    <option value="{{u.id}}">{{u.name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="control">
+                                <label class="label">Acc. Guitar</label>
+                                <select style="width: 100%;" name="acc_guitar" id="acc_guitar">
+                                    {% for u in users %}
+                                    <option value="{{u.id}}">{{u.name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="control">
+                                <label class="label">Aux. Keys/Sax/Violin</label>
+                                <select style="width: 100%;" name="aux_keys" id="aux_keys">
+                                    {% for u in users %}
+                                    <option value="{{u.id}}">{{u.name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="control" style="margin-top: 2%;">
+                        <button class="button is-link">Submit</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</article>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+<script>
+    $('#worship_leader').chosen();
+    $('#singers').chosen();
+    $('#keyboard').chosen();
+    $('#bass').chosen();
+    $('#e_guitar').chosen();
+    $('#drum').chosen();
+    $('#acc_guitar').chosen();
+    $('#aux_keys').chosen();
+</script>
+{% endblock %}

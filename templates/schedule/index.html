@@ -1,0 +1,36 @@
+{% extends './_includes/scaffholding.html' %}
+
+{% block content %}
+<article class="panel is-primary">
+    <p class="panel-heading">
+        Schedules
+    </p>
+
+    <div class="panel-block">
+        <div class="container">
+            <div class="content" style="padding:10px;">
+                <a href="{{url_for('branch_add')}}"><button class="button is-primary">Add New...</button></a>
+                <div class="table-container" style="padding-top:10px;">
+                    <table class="table is-hoverable">
+                        <thead>
+                            <tr>
+                                <td>Branch</td>
+                                <td>Time</td>
+                                <td>Detail</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>GBI Cawang</td>
+                                <td>01-01-2019</td>
+                                <td><i><a href=""></a></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</article>
+{% endblock %}

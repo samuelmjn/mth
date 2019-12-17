@@ -1,0 +1,42 @@
+{% extends './_includes/scaffholding.html' %}
+
+{% block content %}
+<article class="panel is-primary">
+    <p class="panel-heading">
+        Check In
+    </p>
+
+    <div class="panel-block">
+        <div class="container">
+            <div class="content" style="padding:10px;">
+                <form action="/">
+                    <div class="control">
+                        <label class="label">Branch</label>
+                        <select name="branch" id="branch" disabled>
+                            <option value="">GBI MTH</option>
+                            <option value="">GBI Budi Murni</option>
+                        </select>
+                    </div>
+                    <div class="control">
+                        <label class="label">Date & Time</label>
+                        <input type="datetime-local" class="input" disabled>
+                    </div>
+
+                    <div class="control">
+                        <label class="label">Take Photo: </label>
+                        <input type="file" class="input">
+                    </div>
+
+                    <div class="control" style="margin-top: 2%;">
+                        <button class="button is-link">Submit</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</article>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/selectize.min.js"></script>
+{% endblock %}  
